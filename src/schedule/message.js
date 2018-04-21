@@ -3,6 +3,8 @@ const fse = require('fs-extra')
 const path = require('path')
 const _ = require('lodash')
 const axios = require('axios')
+const moment = require('moment')
+
 module.exports = {
   async init() {
     try {
@@ -20,6 +22,8 @@ module.exports = {
     }
     let messageData = news.splice(0,5)
     messageData[0].picURL = 'http://img.mukewang.com/569dcb31000193fe07400411.jpg'
+    messageData[0].title = moment().format('hh:mm:ss') +" "+messageData[0].title
+    
     console.log("开始发送信息")
     let data = {
       "feedCard": {
