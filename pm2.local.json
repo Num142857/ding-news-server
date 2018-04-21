@@ -1,0 +1,12 @@
+{
+  "apps": [{
+    "name": "micro-frontend-server",
+    "script": "./src/index.js",
+    "cwd": "/Users/Fan/workspace/micro-frontend-server",
+    "instance_var":"production",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "9898"
+    }
+  }]
+}

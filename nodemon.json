@@ -1,0 +1,8 @@
+{
+  "ignore": [
+    "project/"
+  ],
+  "watch": [
+    "src/"
+  ]
+}

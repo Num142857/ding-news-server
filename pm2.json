@@ -1,0 +1,13 @@
+{
+  "apps": [{
+    "name": "micro-frontend-server",
+    "script": "./src/index.js",
+    "args": "--production",
+    "instances": 1,
+    "cwd": "/root/micro-frontend-server/current",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "9898"
+    }
+  }]
+}
