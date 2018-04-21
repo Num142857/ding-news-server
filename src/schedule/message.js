@@ -18,20 +18,25 @@ module.exports = {
             }
         });
     }
-    let newsdata = news.splice(0,4)
-    exists = exists.concat(newsdata)
+    let messageData = news.splice(0,5)
+    messageData[0].picURL = 'http://img.mukewang.com/569dcb31000193fe07400411.jpg'
     console.log("开始发送信息")
     let data = {
       "feedCard": {
-        "links": newsdata
+        "links": messageData
       },
       "msgtype": "feedCard"
     }
     const url = 'https://oapi.dingtalk.com/robot/send?access_token=2511b1d00f6021e5425a3e348bd54b8a158e34121650ca4f4401d0f40784fee8';
     const res = await axios.post(url,data);
-    console.log("还有这么多条没发",news.length)
+    
+    //已发送消息归档
+    exists = exists.concat(messageData)
+    
     await fse.writeJson(path.resolve(process.cwd(), '../news-data/data.json'), news)
     await fse.writeJson(path.resolve(process.cwd(), '../news-data/exists.json'), exists)
+    console.log("还有这么多条没发",news.length)
+    console.log("消息发送完毕")
       } catch (error) {
           console.log(error)
       }
