@@ -7,7 +7,7 @@ module.exports = function(shipit) {
   shipit.initConfig({
     default: {
       workspace: '/tmp/github-monitor',
-      repositoryUrl: 'http://git.jc/micro-frontend/ding-news-server.git',
+      repositoryUrl: 'https://github.com/Fantasy9527/ding-news-server.git',
       ignores: [
         '.git', 'node_modules',
       ],
@@ -16,16 +16,16 @@ module.exports = function(shipit) {
       shallowClone: true,
       cnpm: {},
     },
-    // Production: {
-    //   env: 'prod',
-    //   pm2: {
-    //     json: '/root/micro-frontend/current/pm2.json',
-    //   },
-    //   deployTo: '/root/micro-frontend/',
+    Production: {
+      env: 'prod',
+      pm2: {
+        json: '/root/ding-news-server/current/pm2.json',
+      },
+      deployTo: '/root/ding-news-server/',
 
-    //   servers: [ 'root@10.0.26.105' ],
-    //   branch: '1.5.3',
-    // },
+      servers: [ 'root@10.0.21.105' ],
+      branch: 'master',
+    },
     Development: {
       env: 'dev',
       isDevelopment: true,
@@ -54,7 +54,7 @@ module.exports = function(shipit) {
     const baseDir = '/root/ding-news-server/current';
     // shipit.remote(`mkdir ${baseDir}/public;`);
 
-    shipit.remote(`ln -nfs /root/micro-frontend-project ${baseDir}/project`);
+    // shipit.remote(`ln -nfs /root/ding-news-server-project ${baseDir}/project`);
     // shipit.remote(`ln -nfs /root/project/Attachments ${baseDir}/app/static/Attachments`);
     // shipit.remote(`cd ${baseDir}; npm stop`);
     // setTimeout(function() {
