@@ -1,8 +1,10 @@
 var schedule = require("node-schedule"); 
 var message = require('./message');
 var crawl = require('./crawl')
+//避免第一次没有创建文件夹目录
+crawl.init();  
+setTimeout(()=>message.init(),60000 );
 
-message.init(); 
 (function() {
   let rule = new schedule.RecurrenceRule();
   rule.second =0

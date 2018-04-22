@@ -4,12 +4,14 @@ const path = require('path')
 const _ = require('lodash')
 const axios = require('axios')
 const moment = require('moment')
-
+var os = require('os');
+let newsFilePath = `${os.homedir()}/.news/data.json`
+let newsExistsPath = `${os.homedir()}/.news/exists.json`
 module.exports = {
   async init() {
     try {
-    var news = await fse.readJson(path.resolve(process.cwd(), '../news-data/data.json'))
-    var exists = await fse.readJson(path.resolve(process.cwd(), '../news-data/exists.json'))
+    var news = await fse.readJson(newsFilePath)
+    var exists = await fse.readJson(newsExistsPath)
 
     //删除发送过的
     for (let index = news.length-1; index !=-1; index--) {
@@ -38,8 +40,8 @@ module.exports = {
     //已发送消息归档
     exists = exists.concat(messageData)
     
-    await fse.writeJson(path.resolve(process.cwd(), '../news-data/data.json'), news)
-    await fse.writeJson(path.resolve(process.cwd(), '../news-data/exists.json'), exists)
+    await fse.writeJson(newsFilePath, news)
+    await fse.writeJson(newsExistsPath, exists)
     console.log("还有这么多条没发",news.length)
     console.log("消息发送完毕")
       } catch (error) {

@@ -1,5 +1,6 @@
-const puppeteer = require('puppeteer');
 
+const puppeteer = require('puppeteer');
+var os = require('os');
 const fse = require('fs-extra')
 const path = require('path')
 const _ = require('lodash')
@@ -51,22 +52,24 @@ module.exports = {
           return arr
         });
         
-    
-        const exists = await fse.pathExists(path.resolve(process.cwd(), '../news-data/data.json'))
-
+        let newsDataPath = `${os.homedir()}/.news/`
+        let newsFilePath = `${os.homedir()}/.news/data.json`
+        let newsExistsPath = `${os.homedir()}/.news/exists.json`
+        const exists = await fse.pathExists(newsDataPath)
+        console.log(exists)
         if(exists){
           console.log('文件已经存在,开始对已存在数据去重处理')
-            const news = await fse.readJson(path.resolve(process.cwd(), '../news-data/data.json'))
+            const news = await fse.readJson(newsFilePath)
             result = result.concat(news)
             result = _.uniqBy(result,'id')
         }else{
             console.log('文件不存在,开始生成')
-            await fse.ensureDir(path.resolve(process.cwd(), '../news-data/'))
-            await fse.writeJson(path.resolve(process.cwd(), '../news-data/exists.json'), [])
+            await fse.ensureDir(newsDataPath)
+            await fse.writeJson(newsExistsPath, [])
             
         }
         
-        await fse.writeJson(path.resolve(process.cwd(), '../news-data/data.json'), result)
+        await fse.writeJson(newsFilePath, result)
         console.log("抓取完毕,数据量为:",result.length)
         await browser.close();
       } catch (error) {
