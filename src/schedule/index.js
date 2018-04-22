@@ -8,7 +8,7 @@ message.init();
   rule.second =0
   rule.minute = [0,30]
   rule.hour=[9,10,11,12,13,14,15,16,17,18]
-  rule.dayOfWeek=[0,1,2,3,4,5]
+  rule.dayOfWeek=[1,2,3,4,5]
   schedule.scheduleJob(rule, function(){  
       message.init();  
   });  

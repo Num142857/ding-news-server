@@ -8,7 +8,7 @@ module.exports = {
     try {
         console.log('开始抓取内容')
         const browser = await puppeteer.launch({
-          headless: false
+          headless: true
         });
         const page = await browser.newPage();
         const loadCount = 10
