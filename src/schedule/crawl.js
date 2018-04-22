@@ -9,7 +9,7 @@ module.exports = {
     try {
         console.log('开始抓取内容')
         const browser = await puppeteer.launch({
-          headless: true,
+          // headless: true,
           args : [ '-- no-sandbox ','-- disable-setuid-sandbox ' ]
         });
         const page = await browser.newPage();
