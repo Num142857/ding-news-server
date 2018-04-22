@@ -7,7 +7,7 @@ module.exports = function(shipit) {
   shipit.initConfig({
     default: {
       workspace: '/tmp/github-monitor',
-      repositoryUrl: 'http://git.jc/micro-frontend/micro-frontend-server.git',
+      repositoryUrl: 'http://git.jc/micro-frontend/ding-news-server.git',
       ignores: [
         '.git', 'node_modules',
       ],
@@ -30,9 +30,9 @@ module.exports = function(shipit) {
       env: 'dev',
       isDevelopment: true,
       pm2: {
-        json: '/root/micro-frontend-server/current/pm2.test.json',
+        json: '/root/ding-news-server/current/pm2.test.json',
       },
-      deployTo: '/root/micro-frontend-server/',
+      deployTo: '/root/ding-news-server/',
       servers: [ 'root@10.0.21.105' ],
       branch: 'master',
     },
@@ -40,10 +40,10 @@ module.exports = function(shipit) {
     //   env: 'test',
     //   isDevelopment: true,
     //   pm2: {
-    //     json: '/root/micro-frontend-server/current/pm2.test.json',
+    //     json: '/root/ding-news-server/current/pm2.test.json',
 
     //   },
-    //   deployTo: '/root/micro-frontend-server/',
+    //   deployTo: '/root/ding-news-server/',
     //   servers: [ 'root@10.0.21.160' ],
     //   branch: 'master',
 
@@ -51,7 +51,7 @@ module.exports = function(shipit) {
   });
 
   var bootstrap = function() {
-    const baseDir = '/root/micro-frontend-server/current';
+    const baseDir = '/root/ding-news-server/current';
     // shipit.remote(`mkdir ${baseDir}/public;`);
 
     shipit.remote(`ln -nfs /root/micro-frontend-project ${baseDir}/project`);

@@ -1,4 +1,4 @@
-# micro-frontend-server
+# ding-news-server
 
 > 
 
@@ -14,7 +14,7 @@ Getting up and running is as easy as 1, 2, 3.
 2. Install your dependencies
 
     ```
-    cd path/to/micro-frontend-server; npm install
+    cd path/to/ding-news-server; npm install
     ```
 
 3. Start your app

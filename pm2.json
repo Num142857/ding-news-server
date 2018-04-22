@@ -1,13 +1,13 @@
 {
   "apps": [{
-    "name": "micro-frontend-server",
+    "name": "ding-news-server",
     "script": "./src/index.js",
     "args": "--production",
     "instances": 1,
-    "cwd": "/root/micro-frontend-server/current",
+    "cwd": "/root/ding-news-server/current",
     "env": {
       "NODE_ENV": "production",
-      "PORT": "9898"
+      "PORT": "9879"
     }
   }]
 }
