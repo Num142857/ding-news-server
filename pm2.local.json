@@ -3,10 +3,9 @@
     "name": "ding-news-server",
     "script": "./src/index.js",
     "cwd": "/Users/Fan/workspace/ding-news-server",
-    "instance_var":"production",
+    "instance_var":"local",
     "env": {
-      "NODE_ENV": "production",
-      "PORT": "9879"
+      "NODE_ENV": "local"
     }
   }]
 }

@@ -36,18 +36,6 @@ module.exports = function(shipit) {
       servers: [ 'root@10.0.21.105' ],
       branch: 'master',
     },
-    // Test: {
-    //   env: 'test',
-    //   isDevelopment: true,
-    //   pm2: {
-    //     json: '/root/ding-news-server/current/pm2.test.json',
-
-    //   },
-    //   deployTo: '/root/ding-news-server/',
-    //   servers: [ 'root@10.0.21.160' ],
-    //   branch: 'master',
-
-    // },
   });
 
   var bootstrap = function() {

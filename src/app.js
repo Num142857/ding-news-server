@@ -51,6 +51,8 @@ app.configure(socketio());
 app.configure(middleware);
 // Set up our services (see `services/index.js`)
 app.configure(services);
+//定时任务
+app.configure(schedule);
 
 // Set up event channels (see channels.js)
 app.configure(channels);
@@ -62,5 +64,4 @@ app.use(express.errorHandler({
 }));
 
 app.hooks(appHooks);
-
 module.exports = app;

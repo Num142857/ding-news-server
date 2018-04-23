@@ -7,7 +7,6 @@
     "cwd": "/root/ding-news-server/current",
     "env": {
       "NODE_ENV": "production",
-      "PORT": "9879"
     }
   }]
 }
