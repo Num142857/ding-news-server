@@ -6,7 +6,7 @@
     "instances": 1,
     "cwd": "/root/ding-news-server/current",
     "env": {
-      "NODE_ENV": "production",
+      "NODE_ENV": "production"
     }
   }]
 }

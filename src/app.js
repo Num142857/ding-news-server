@@ -64,4 +64,5 @@ app.use(express.errorHandler({
 }));
 
 app.hooks(appHooks);
+
 module.exports = app;
