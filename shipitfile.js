@@ -2,7 +2,7 @@
 module.exports = function(shipit) {
   require('shipit-deploy')(shipit);
   require('shipit-cnpmjs')(shipit);
-  require('shipit-pm2')(shipit);
+  // require('shipit-pm2')(shipit);
 
   shipit.initConfig({
     default: {
@@ -40,28 +40,21 @@ module.exports = function(shipit) {
 
   var bootstrap = function() {
     const baseDir = '/root/ding-news-server/current';
-    // shipit.remote(`mkdir ${baseDir}/public;`);
-
-    // shipit.remote(`ln -nfs /root/ding-news-server-project ${baseDir}/project`);
-    // shipit.remote(`ln -nfs /root/project/Attachments ${baseDir}/app/static/Attachments`);
-    // shipit.remote(`cd ${baseDir}; npm stop`);
-    // setTimeout(function() {
-    //   switch (shipit.config.env) {
-    //     case 'dev':
-    //       shipit.remote(`cd ${baseDir}; npm run start:dev`);
-    //       break;
-    //     case 'test':
-    //       shipit.remote(`cd ${baseDir}; npm run start:test`);
-    //       break;
-    //     case 'prod':
-    //       shipit.remote(`cd ${baseDir}; npm run start`);
-    //       break;
-    //     default:
-    //       shipit.remote(`cd ${baseDir}; npm run start:dev`);
-    //       break;
-    //   }
-    // }, 10000);
-
+    
+    switch (shipit.config.env) {
+    case 'dev':
+      shipit.remote(`cd ${baseDir}/;NODE_ENV=local node ./src/index.js`);
+      break;
+    case 'test':
+      shipit.remote(`cd ${baseDir}/;NODE_ENV=test node ./src/index.js`);
+      break;
+    case 'prod':
+      shipit.remote(`cd ${baseDir}/;NODE_ENV=prod node ./src/index.js`);
+      break;
+    default:
+      shipit.remote(`cd ${baseDir}/;NODE_ENV=local node ./src/index.js`);
+      break;
+    }
   };
 
   shipit.on('published', bootstrap);

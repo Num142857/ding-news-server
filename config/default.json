@@ -3,6 +3,8 @@
   "port": 3030,
   "public": "../public/",
   "project": "../project/",
-  "view": "../view/"
+  "view": "../view/",
+  "env": "没有指定环境"
+  
 
 }
