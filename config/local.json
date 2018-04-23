@@ -1,8 +1,0 @@
-{
-  "host": "0.0.0.0",
-  "port": "9877",
-  "public": "../public/",
-  "view": "../view/",
-  "env":"local",
-  "frontendRobot":"https://oapi.dingtalk.com/robot/send?access_token=2511b1d00f6021e5425a3e348bd54b8a158e34121650ca4f4401d0f40784fee8"
-}

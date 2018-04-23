@@ -22,7 +22,6 @@ module.exports = function(shipit) {
         json: '/root/ding-news-server/current/pm2.json',
       },
       deployTo: '/root/ding-news-server/',
-
       servers: [ 'root@10.0.21.105' ],
       branch: 'master',
     },

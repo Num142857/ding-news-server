@@ -1,8 +1,8 @@
 {
-  "host": "0.0.0.0",
-  "port": "9887",
-  "public": "../public/",
-  "view": "../view/",
-  "env":"production",
-  "frontendRobot":"https://oapi.dingtalk.com/robot/send?access_token=aceff2c8dbb72c0a1ac3e10aca917be0c87cbf1249091eb5a0ec98f74cd97560"
-  }
+    "host": "0.0.0.0",
+    "port": "9887",
+    "public": "../public/",
+    "view": "../view/",
+    "env": "production",
+    "frontendRobot": "https://oapi.dingtalk.com/robot/send?access_token=aceff2c8dbb72c0a1ac3e10aca917be0c87cbf1249091eb5a0ec98f74cd97560"
+}
