@@ -24,7 +24,7 @@ module.exports = async function (app) {
     let messageData = news.splice(0, 5);
     // messageData[0].picURL = 'http://img.mukewang.com/569dcb31000193fe07400411.jpg'
     // messageData[0].title = moment().format('hh:mm:ss') +' '+messageData[0].title;
-    messageData[0].picURL = `https://alili.tech/images/github_${parseInt(Math.random() * 63)}.png`;
+    messageData[0].picURL = `https://alili.tech/images/github_${Math.ceil(Math.random() * 63) }.png`;
 
     console.log('开始发送信息');
     let data = {
