@@ -62,7 +62,9 @@ app.use(express.notFound());
 app.use(express.errorHandler({
   logger
 }));
-
+console.log('当前环境为:', app.get('env'));
+console.log('当前环境为:', app.get('NODE_ENV'));
+console.log(process.env.NODE_ENV);
 app.hooks(appHooks);
 
 module.exports = app;

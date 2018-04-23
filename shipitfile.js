@@ -2,7 +2,7 @@
 module.exports = function(shipit) {
   require('shipit-deploy')(shipit);
   require('shipit-cnpmjs')(shipit);
-  // require('shipit-pm2')(shipit);
+  require('shipit-pm2')(shipit);
 
   shipit.initConfig({
     default: {
@@ -30,7 +30,7 @@ module.exports = function(shipit) {
       env: 'dev',
       isDevelopment: true,
       pm2: {
-        json: '/root/ding-news-server/current/pm2.test.json',
+        json: '/root/ding-news-server/current/pm2.local.json',
       },
       deployTo: '/root/ding-news-server/',
       servers: [ 'root@10.0.21.105' ],
@@ -41,20 +41,20 @@ module.exports = function(shipit) {
   var bootstrap = function() {
     const baseDir = '/root/ding-news-server/current';
     
-    switch (shipit.config.env) {
-    case 'dev':
-      shipit.remote(`cd ${baseDir}/;NODE_ENV=local node ./src/index.js`);
-      break;
-    case 'test':
-      shipit.remote(`cd ${baseDir}/;NODE_ENV=test node ./src/index.js`);
-      break;
-    case 'prod':
-      shipit.remote(`cd ${baseDir}/;NODE_ENV=prod node ./src/index.js`);
-      break;
-    default:
-      shipit.remote(`cd ${baseDir}/;NODE_ENV=local node ./src/index.js`);
-      break;
-    }
+    // switch (shipit.config.env) {
+    // case 'dev':
+    //   shipit.remote(`cd ${baseDir}/;NODE_ENV=local pm2 startOrRestart ${shipit.config.pm2.json}`);
+    //   break;
+    // case 'test':
+    //   shipit.remote(`cd ${baseDir}/;NODE_ENV=test pm2 startOrRestart ${shipit.config.pm2.json}`);
+    //   break;
+    // case 'prod':
+    //   shipit.remote(`cd ${baseDir}/;NODE_ENV=production pm2 startOrRestart ${shipit.config.pm2.json}`);
+    //   break;
+    // default:
+    //   shipit.remote(`cd ${baseDir}/;NODE_ENV=local pm2 startOrRestart ${shipit.config.pm2.json}`);
+    //   break;
+    // }
   };
 
   shipit.on('published', bootstrap);
