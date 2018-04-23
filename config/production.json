@@ -4,5 +4,5 @@
   "public": "../public/",
   "view": "../view/",
   "env":"production",
-  "frontendRobot":"https://oapi.dingtalk.com/robot/send?access_token=2511b1d00f6021e5425a3e348bd54b8a158e34121650ca4f4401d0f40784fee8"
+  "frontendRobot":"https://oapi.dingtalk.com/robot/send?access_token=aceff2c8dbb72c0a1ac3e10aca917be0c87cbf1249091eb5a0ec98f74cd97560"
 }
