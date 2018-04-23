@@ -16,7 +16,7 @@ module.exports = async function (app) {
     for (let index = news.length - 1; index != -1; index--) {
       const element = news[index];
       exists.forEach(exist => {
-        if (exist.id == element.id) {
+        if (exist.messageURL == element.messageURL) {
           news.splice(index, 1);
         }
       });

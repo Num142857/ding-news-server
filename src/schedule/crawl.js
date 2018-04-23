@@ -14,7 +14,7 @@ module.exports = async function(app){
     });
     const page = await browser.newPage();
     const loadCount = 10;
-    await page.goto('https://segmentfault.com/frontend', { waitUntil: 'networkidle2' });
+    await page.goto('https://juejin.im/welcome/frontend', { waitUntil: 'networkidle2' });
     await page.setViewport({
       width: 1920,
       height: 1080
@@ -28,24 +28,20 @@ module.exports = async function(app){
     await page.waitFor(1000);
     await page.keyboard.press('End');
     await page.waitFor(1000);
-    await page.click('#btn-load-more');
     await page.keyboard.press('End');
     await page.waitFor(1000);
     await page.keyboard.press('End');
     await page.waitFor(1000);
     await page.keyboard.press('End');
     await page.waitFor(1000);
-    await page.click('#btn-load-more');
 
     var result = await page.evaluate(() => {
       let arr = [];
-      let newsList = document.querySelectorAll('.news-item');
+      let newsList = document.querySelectorAll('.title-row');
       newsList.forEach((item) => {
-        let id = item.getAttribute('data-id');
-        let title = item.querySelector('.news__item-title a').innerText;
-        let messageURL = item.querySelector('.news__item-title a').href;
+        let title = item.querySelector('a').innerText;
+        let messageURL = item.querySelector('a').href;
         arr.push({
-          id,
           title,
           messageURL
         });
