@@ -7,7 +7,7 @@ module.exports = function (app) {
   //避免第一次没有创建文件夹目录
   // app.configure(message);
   app.configure(crawl);
-  setTimeout(() => app.configure(message), 20000);
+  // setTimeout(() => app.configure(message), 20000);
 
   (function () {
     let rule = new schedule.RecurrenceRule();
