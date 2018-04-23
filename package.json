@@ -25,7 +25,7 @@
     "dev": "NODE_ENV=local nodemon src/",
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
-    "start": "NODE_ENV=local node src/",
+    "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
     "deploy:prod": "shipit Production deploy",
     "deploy:test": "shipit Test deploy",
