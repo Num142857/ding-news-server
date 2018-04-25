@@ -34,6 +34,18 @@ module.exports = async function(app){
     await page.waitFor(1000);
     await page.keyboard.press('End');
     await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
+    await page.keyboard.press('End');
+    await page.waitFor(1000);
 
     var result = await page.evaluate(() => {
       let arr = [];
