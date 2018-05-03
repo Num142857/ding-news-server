@@ -19,8 +19,6 @@ module.exports = async function(app){
   await getArticle('https://juejin.im/tag/vue.js?sort=hottest');
   await getArticle('https://juejin.im/tag/Webpack');
   await getArticle('https://juejin.im/tag/Webpack?sort=hottest');
-  await getArticle('https://juejin.im/tag/GitHub');
-  await getArticle('https://juejin.im/tag/GitHub?sort=hottest');
   await getArticle('https://juejin.im/tag/CSS');
   await getArticle('https://juejin.im/tag/CSS?sort=hottest');
   await getArticle('https://juejin.im/tag/前端框架');
