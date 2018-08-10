@@ -29,8 +29,6 @@ module.exports = async function(app){
   await getArticle('https://juejin.im/tag/React%20Native?sort=hottest');
   await getArticle('https://juejin.im/tag/Nginx');
   await getArticle('https://juejin.im/tag/Nginx?sort=hottest');
-  await getArticle('https://juejin.im/tag/Canvas');
-  await getArticle('https://juejin.im/tag/Canvas?sort=hottest');
 };
 
 function shuffle(arr) {
