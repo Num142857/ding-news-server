@@ -44,7 +44,7 @@ function getArticle(url){
     try {
       console.log('开始抓取内容', url);
       const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         args: ['--no-sandbox ', '--disable-setuid-sandbox ']
       });
       const page = await browser.newPage();
