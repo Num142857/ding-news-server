@@ -2,7 +2,7 @@
   "apps": [{
     "name": "ding-news-server",
     "script": "./src/index.js",
-    "cwd": "/root/ding-news-server/current",
+    "cwd": "/home/ding-news-server/current",
     "instance_var":"test",
     "env": {
       "NODE_ENV": "test"
