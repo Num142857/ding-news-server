@@ -19,26 +19,26 @@ module.exports = function(shipit) {
     Production: {
       env: 'prod',
       pm2: {
-        json: '/home/root/workspace/ding-news-server/current/pm2.json',
+        json: '/home/pi/workspace/ding-news-server/current/pm2.json',
       },
-      deployTo: '/home/root/workspace/ding-news-server/',
-      servers: [ 'root@192.168.31.232' ],
+      deployTo: '/home/pi/workspace/ding-news-server/',
+      servers: [ 'pi@192.168.31.215' ],
       branch: 'master',
     },
     Development: {
       env: 'dev',
       isDevelopment: true,
       pm2: {
-        json: '/home/root/workspace/ding-news-server/current/pm2.local.json',
+        json: '/home/pi/workspace/ding-news-server/current/pm2.local.json',
       },
-      deployTo: '/home/root/workspace/ding-news-server/',
-      servers: [ 'root@192.168.31.232' ],
+      deployTo: '/home/pi/workspace/ding-news-server/',
+      servers: [ 'pi@192.168.31.235' ],
       branch: 'master',
     },
   });
 
   var bootstrap = function() {
-    const baseDir = '/home/root/workspace/ding-news-server/current';
+    const baseDir = '/home/pi/workspace/ding-news-server/current';
     
     // switch (shipit.config.env) {
     // case 'dev':
