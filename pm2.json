@@ -4,7 +4,7 @@
     "script": "./src/index.js",
     "args": "--production",
     "instances": 1,
-    "cwd": "/home/ding-news-server/current",
+    "cwd": "/home/pi/workspace/ding-news-server/current",
     "env": {
       "NODE_ENV": "production"
     }
