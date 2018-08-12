@@ -1,5 +1,5 @@
 
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 var os = require('os');
 const fse = require('fs-extra');
 const path = require('path');
