@@ -19,9 +19,9 @@ module.exports = function(shipit) {
     Production: {
       env: 'prod',
       pm2: {
-        json: '/root/ding-robot/current/pm2.json',
+        json: '/root/robot/current/pm2.json',
       },
-      deployTo: '/root/ding-robot/',
+      deployTo: '/root/robot/',
       servers: [ 'root@10.0.11.20' ],
       branch: 'master',
     },
@@ -29,16 +29,16 @@ module.exports = function(shipit) {
       env: 'dev',
       isDevelopment: true,
       pm2: {
-        json: '/root/ding-robot/current/pm2.local.json',
+        json: '/root/robot/current/pm2.local.json',
       },
-      deployTo: '/root/ding-robot/',
+      deployTo: '/root/robot/',
       servers: [ 'root@10.0.11.20' ],
       branch: 'master',
     },
   });
 
   var bootstrap = function() {
-    const baseDir = '/root/ding-robot/current';
+    const baseDir = '/root/robot/current';
     
     // switch (shipit.config.env) {
     // case 'dev':
