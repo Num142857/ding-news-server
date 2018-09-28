@@ -2,10 +2,11 @@
   "apps": [{
     "name": "ding-news-server",
     "script": "./src/index.js",
+    "args": "--production",
+    "instances": 1,
     "cwd": "/Users/Fan/workspace/ding-news-server",
-    "instance_var":"local",
     "env": {
-      "NODE_ENV": "local"
+      "NODE_ENV": "production"
     }
   }]
 }
