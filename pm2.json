@@ -4,7 +4,7 @@
     "script": "./src/index.js",
     "args": "--production",
     "instances": 1,
-    "cwd": "/root/robot",
+    "cwd": "/root/ding-robot",
     "env": {
       "NODE_ENV": "production"
     }
