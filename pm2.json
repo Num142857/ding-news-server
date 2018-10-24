@@ -1,7 +1,7 @@
 {
   "apps": [{
     "name": "ding-news-server",
-    "script": "./src/index.js",
+    "script": "/root/robot/current/src/index.js",
     "args": "--production",
     "instances": 1,
     "cwd": "./",
